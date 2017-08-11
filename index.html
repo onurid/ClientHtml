@@ -339,7 +339,8 @@ function checkCart(){
 
 
 
-    <script type="text/ng-template" id="pages/home.html">
+    <script type="text/ng-template" id="pages/home.html"> 
+
 	 <header class="header1">
 <div class="container">
 	<div class="jumbotron" style="background-image:url('images/banner.jpg')">
@@ -362,101 +363,22 @@ function checkCart(){
 
 
 
-<div class="row">
+<div  class="row">
 
-    <div class="col-md-3 simpleCart_shelfItem">   
+    <div class="col-md-3 simpleCart_shelfItem" ng-repeat="product in ProductList" >   
 <div class="panel panel-default">
-     <div class="panel-heading item_name">Portakal</div>
+     <div class="panel-heading item_name">{{product.Name}}</div>
   <div class="panel-body">
- <img src="http://placehold.it/1000x1000/cecc00/" class="img-thumbnail img-responsive item_thumb"><br> 
-     Açıklama
+ <img src="{{product.ImagePath}}" class="img-thumbnail img-responsive item_thumb"><br> 
+     {{product.Description}}
   </div>
-  <div class="panel-footer"> <p class="item_price">₺ 0.5</p><span class='btn btn-danger btn-md item_add'>Ekle</span> 
+  <div class="panel-footer"> <p class="item_price">₺ {{product.Price}}</p><span class='btn btn-danger btn-md item_add'>Ekle</span> 
       <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label>
 
      </div>
 </div>
 </div><!-- end object -->
 
- <div class="col-md-3 simpleCart_shelfItem">   
-<div class="panel panel-default">
-     <div class="panel-heading item_name">Elma</div>
-  <div class="panel-body">
- <img src="http://placehold.it/1000x1000/ffdc00/" class="img-thumbnail img-responsive item_thumb"><br>Açıklama
-  </div>
-  <div class="panel-footer"><p class="item_price">₺ 1</p>  <span class='btn btn-danger btn-md item_add'>Ekle</span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
-</div>
-
-</div><!-- end object -->
-     <div class="col-md-3 simpleCart_shelfItem">   
-<div class="panel panel-default">
-     <div class="panel-heading item_name">Muz</div>
-  <div class="panel-body">
-  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Açıklama
-  </div>
-  <div class="panel-footer"><p class="item_price">₺ 3</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
-</div>
-
-</div><!-- end object -->
-    
-    
-	     <div class="col-md-3 simpleCart_shelfItem">   
-<div class="panel panel-default">
-     <div class="panel-heading item_name">Erik</div>
-  <div class="panel-body">
-  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Açıklama
-  </div>
-  <div class="panel-footer"><p class="item_price">₺ 2</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
-</div>
-
-</div><!-- end object -->
-
-    
-	     <div class="col-md-3 simpleCart_shelfItem">   
-<div class="panel panel-default">
-     <div class="panel-heading item_name">Erik</div>
-  <div class="panel-body">
-  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Açıklama
-  </div>
-  <div class="panel-footer"><p class="item_price">₺ 2</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
-</div>
-
-</div><!-- end object -->
-	
-	
-		     <div class="col-md-3 simpleCart_shelfItem">   
-<div class="panel panel-default">
-     <div class="panel-heading item_name">Erik</div>
-  <div class="panel-body">
-  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Açıklama
-  </div>
-  <div class="panel-footer"><p class="item_price">₺ 2</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
-</div>
-
-</div><!-- end object -->
-
-	     <div class="col-md-3 simpleCart_shelfItem">   
-<div class="panel panel-default">
-     <div class="panel-heading item_name">Erik</div>
-  <div class="panel-body">
-  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Description
-  </div>
-  <div class="panel-footer"><p class="item_price">₺ 2</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
-</div>
-
-</div><!-- end object -->
-
-
-	     <div class="col-md-3 simpleCart_shelfItem">   
-<div class="panel panel-default">
-     <div class="panel-heading item_name">Erik</div>
-  <div class="panel-body">
-  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Description
-  </div>
-  <div class="panel-footer"><p class="item_price">₺ 2</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
-</div>
-
-</div><!-- end object -->
     
     </div> <!-- end row -->
       
@@ -470,8 +392,8 @@ function checkCart(){
 	
 </div>
 
-  
-    </script>
+      </script>
+
     <script type="text/ng-template" id="pages/blog.html">
       <div class="container">
 	  <h1 ng-init="TestInit()">Blog</h1>
