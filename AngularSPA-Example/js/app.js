@@ -21,6 +21,18 @@ app.config(function($routeProvider) {
   .otherwise({redirectTo: '/'});
 });
 
+app.controller('HomeController', function($scope) {
+  $scope.message = 'Hello from HomeController';
+  $scope.Test = function ()
+  {
+	alert(1);  
+  };
+});
 
+app.controller('BlogController', function($scope) {
+  $scope.message = 'Hello from BlogController';
+});
 
-
+app.controller('AboutController', function($scope) {
+  $scope.message = 'Hello from AboutController';
+});
