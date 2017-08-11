@@ -1,17 +1,19 @@
-<html>
-<head>
+<!doctype html>
+<html ng-app="myApp">
+  <head>    
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-<link href="css/productList.css" rel="stylesheet">
-<link href="css/footer.css" rel="stylesheet">
-<link href="css/menuBar.css" rel="stylesheet">
-<link href="css/loginModal.css" rel="stylesheet">
-
-</head>
-
-<body style="background-image:url('images/background.jpg')">
+	<link href="css/productList.css" rel="stylesheet">
+	<link href="css/footer.css" rel="stylesheet">
+	<link href="css/menuBar.css" rel="stylesheet">
+	<link href="css/loginModal.css" rel="stylesheet">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+		
+  </head>
+  <body style="background-image:url('images/background.jpg')">
 
 <div class="container">
    <span class="simpleCart_quantity glyphicon glyphicon-shopping-cart"></span> Ürün - <span class="simpleCart_total"></span>
@@ -27,8 +29,9 @@
 		  <span class="icon-bar"></span>
 		  <span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="#">E-Manav</a>
-      
+		<a class="navbar-brand" href="#/">E-Manav</a>
+		<a class="navbar-brand" href="#/blog">Blog</a>
+		<a class="navbar-brand" href="#/about">About</a>
 	  </div>
 
 
@@ -39,7 +42,7 @@
       
 		  <li class="dropdown menu-large">
 		 
-			<a href="#" class="dropdown-toggle" id="dLabel" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> Sepet <b class="caret"></b></a>
+			<a href="" class="dropdown-toggle" id="dLabel" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> Sepet <b class="caret"></b></a>
 			
 			<ul class="dropdown-menu megamenu">
 			 <div class="container">
@@ -57,7 +60,7 @@
 		  </li>
 		  
 		  <li>
-		  <a href="#" data-toggle="modal" data-target="#login-modal">Giriş</a>
+		  <a href="" data-toggle="modal" data-target="#login-modal">Giriş</a>
 		  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     	  <div class="modal-dialog">
 				<div class="loginmodal-container">
@@ -85,11 +88,16 @@
 
 </nav>
   
-        @RenderBody()
-        
-		
-		
-		<footer class="footer1">
+
+
+
+    <div ng-view></div>
+
+	
+	
+	
+	
+	<footer class="footer1">
 <div class="container">
 
 <div class="row"><!-- row -->
@@ -262,7 +270,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/simpleCart.js"></script>
-
+<script src="js/app.js"></script>
 
 
 <script>
@@ -315,5 +323,159 @@ function checkCart(){
 
 
 </script>
-
+	
+	
+	
+	
+	
 </html>
+
+
+
+
+
+
+
+    <script type="text/ng-template" id="pages/home.html">
+	 <header class="header1">
+<div class="container">
+	<div class="jumbotron" style="background-image:url('images/banner.jpg')">
+	<h1>Test, şablon..!</h1>
+	<p>...</p>
+	<p><a class="btn btn-primary btn-lg" href="#" role="button">Detaylar..</a></p>
+	</div>
+</div>
+</header>
+
+
+<div class="container">
+
+<nav aria-label="...">
+  <ul class="pager">
+	<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Önceki</a></li>
+    <li class="next"><a href="#">Sonraki <span aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+</nav>
+
+
+
+<div class="row">
+
+    <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Portakal</div>
+  <div class="panel-body">
+ <img src="http://placehold.it/1000x1000/cecc00/" class="img-thumbnail img-responsive item_thumb"><br> 
+     Açıklama
+  </div>
+  <div class="panel-footer"> <p class="item_price">₺ 0.5</p><span class='btn btn-danger btn-md item_add'>Ekle</span> 
+      <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label>
+
+     </div>
+</div>
+</div><!-- end object -->
+
+ <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Elma</div>
+  <div class="panel-body">
+ <img src="http://placehold.it/1000x1000/ffdc00/" class="img-thumbnail img-responsive item_thumb"><br>Açıklama
+  </div>
+  <div class="panel-footer"><p class="item_price">₺ 1</p>  <span class='btn btn-danger btn-md item_add'>Ekle</span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
+</div>
+
+</div><!-- end object -->
+     <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Muz</div>
+  <div class="panel-body">
+  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Açıklama
+  </div>
+  <div class="panel-footer"><p class="item_price">₺ 3</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
+</div>
+
+</div><!-- end object -->
+    
+    
+	     <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Erik</div>
+  <div class="panel-body">
+  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Açıklama
+  </div>
+  <div class="panel-footer"><p class="item_price">₺ 2</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
+</div>
+
+</div><!-- end object -->
+
+    
+	     <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Erik</div>
+  <div class="panel-body">
+  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Açıklama
+  </div>
+  <div class="panel-footer"><p class="item_price">₺ 2</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
+</div>
+
+</div><!-- end object -->
+	
+	
+		     <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Erik</div>
+  <div class="panel-body">
+  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Açıklama
+  </div>
+  <div class="panel-footer"><p class="item_price">₺ 2</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
+</div>
+
+</div><!-- end object -->
+
+	     <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Erik</div>
+  <div class="panel-body">
+  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Description
+  </div>
+  <div class="panel-footer"><p class="item_price">₺ 2</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
+</div>
+
+</div><!-- end object -->
+
+
+	     <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Erik</div>
+  <div class="panel-body">
+  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Description
+  </div>
+  <div class="panel-footer"><p class="item_price">₺ 2</p>  <span class='btn btn-danger btn-md item_add'>Ekle </span>  <label>Adet / Kg: <input class="item_Quantity form-control" type="text" value="1"></label></div>
+</div>
+
+</div><!-- end object -->
+    
+    </div> <!-- end row -->
+      
+	
+<nav aria-label="...">
+  <ul class="pager">
+	<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Önceki</a></li>
+    <li class="next"><a href="#">Sonraki <span aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+</nav>
+	
+</div>
+
+  
+    </script>
+    <script type="text/ng-template" id="pages/blog.html">
+      <h1 ng-init="TestInit()">Blog</h1>
+      <h3>{{message}}</h3>
+    </script>
+    <script type="text/ng-template" id="pages/about.html">
+      <h1>About</h1>
+      <h3>{{message}}</h3>
+    </script>
+	
+	
